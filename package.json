@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "refresh": "rm -rf node_modules && npm install"
+    "refresh": "rm -rf node_modules && yarn"
   },
   "keywords": [],
   "author": "",
