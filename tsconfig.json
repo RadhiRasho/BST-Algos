@@ -5,7 +5,13 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
+		"noUncheckedIndexedAccess": true,
 		"skipLibCheck": true,
-		"outDir": "dist"
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@/types": ["types/index"]
+		}
 	}
 }

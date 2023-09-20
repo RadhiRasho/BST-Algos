@@ -1,4 +1,4 @@
-import { BinaryNode } from '../types';
+import { BinaryNode } from '@/types';
 
 export function generateBinaryTree(
 	min: number,
