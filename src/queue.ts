@@ -1,4 +1,4 @@
-import { Queue } from '../types';
+import { BinaryNode, Queue } from '../types';
 
 function queue() {
 	const queue = new Queue<number>();
@@ -20,3 +20,44 @@ function queue() {
 }
 
 queue();
+
+function queue2() {
+	const queue = new Queue<BinaryNode<number>>();
+
+	queue.enqueue({
+		value: 1,
+		left: { value: 2 },
+		right: { value: 3 },
+	} as BinaryNode<number>);
+	queue.enqueue({
+		value: 1,
+		left: { value: 2 },
+		right: { value: 3 },
+	} as BinaryNode<number>);
+	queue.enqueue({
+		value: 1,
+		left: { value: 2 },
+		right: { value: 3 },
+	} as BinaryNode<number>);
+	queue.enqueue({
+		value: 1,
+		left: { value: 2 },
+		right: { value: 3 },
+	} as BinaryNode<number>);
+	queue.enqueue({
+		value: 1,
+		left: { value: 2 },
+		right: { value: 3 },
+	} as BinaryNode<number>);
+
+	console.log(queue.dequeue());
+	console.log(queue.dequeue());
+	console.log(queue.dequeue());
+	console.log(queue.dequeue());
+	console.log(queue.dequeue());
+
+	console.log(queue.peek());
+	console.log(queue.isEmpty());
+}
+
+queue2();
