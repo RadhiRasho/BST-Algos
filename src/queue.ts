@@ -1,7 +1,7 @@
-import { MyQueue } from '../data';
+import { Queue } from '../types';
 
 function queue() {
-	const queue = new MyQueue<number>();
+	const queue = new Queue<number>();
 
 	queue.enqueue(1);
 	queue.enqueue(2);
@@ -16,7 +16,6 @@ function queue() {
 	console.log(queue.dequeue());
 
 	console.log(queue.peek());
-
 	console.log(queue.isEmpty());
 }
 
