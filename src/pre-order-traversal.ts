@@ -1,4 +1,4 @@
-import { BinaryNode } from '@/types';
+import { BinaryNode } from '../types';
 import { generateBinaryTree } from '../utils/utils';
 
 function preOrderTraversal(node: BinaryNode<number> | undefined) {

@@ -1,10 +1,10 @@
 {
-  "name": "chat-js",
+  "name": "bst-algos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "refresh": "rm -rf node_modules && yarn"
+    "refresh": "rm -rf node_modules && npm i"
   },
   "keywords": [],
   "author": "",

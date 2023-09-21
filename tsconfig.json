@@ -2,16 +2,12 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
 		"skipLibCheck": true,
-		"outDir": "dist",
-		"baseUrl": ".",
-		"paths": {
-			"@/*": ["src/*"],
-			"@/types": ["types/index"]
-		}
+		"outDir": "dist"
 	}
 }
