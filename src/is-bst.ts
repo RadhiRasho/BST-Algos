@@ -12,9 +12,9 @@ function isBST(root: BinaryNode<number> | undefined): boolean {
 }
 
 const binaryTree: BinaryNode<number> = {
-	value: 10,
+	value: 5,
 	left: {
-		value: 20,
+		value: 5,
 	},
 	right: {
 		value: 5,
@@ -23,10 +23,10 @@ const binaryTree: BinaryNode<number> = {
 
 const binaryTree2 = generateBinaryTree(1, 10, 0);
 
-console.time('isBST Bad');
-console.log(isBST(binaryTree));
-console.timeEnd('isBST Bad');
+console.time('isBST BAD');
+console.timeLog('isBST BAD', isBST(binaryTree));
+console.timeEnd('isBST BAD');
 
-console.time('isBST good');
-console.log(isBST(binaryTree2));
-console.timeEnd('isBST good');
+console.time('isBST GOOD');
+console.timeLog('isBST GOOD', isBST(binaryTree2));
+console.timeEnd('isBST GOOD');

@@ -9,8 +9,8 @@ function walk(node: BinaryNode<number> | undefined, path: number[]) {
 	if (!node) return path;
 
 	walk(node.left, path);
-	walk(node.right, path);
 	path.push(node.value);
+	walk(node.right, path);
 
 	return path;
 }

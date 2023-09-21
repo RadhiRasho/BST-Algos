@@ -27,5 +27,5 @@ function BreathFirstSearch(
 const binaryTree = generateBinaryTree(1, 10, 0);
 
 console.time('BreathFirstSearch');
-console.log(BreathFirstSearch(binaryTree, 8));
+console.timeLog('BreathFirstSearch', BreathFirstSearch(binaryTree, 8));
 console.timeEnd('BreathFirstSearch');

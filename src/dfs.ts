@@ -13,5 +13,5 @@ function DepthFirstSearch(head: BinaryNode<number>, needle: number): boolean {
 const binaryTree = generateBinaryTree(1, 10, 0);
 
 console.time('DepthFirstSearch');
-console.log(!!DepthFirstSearch(binaryTree!, 6));
+console.timeLog('DepthFirstSearch', !!DepthFirstSearch(binaryTree!, 6));
 console.timeEnd('DepthFirstSearch');

@@ -20,5 +20,5 @@ function walk(node: BinaryNode<number> | undefined, path: number[]): number[] {
 const binaryTree = generateBinaryTree(1, 10, 0);
 
 console.time('Post Order Traversal');
-console.log(postOrderTraversal(binaryTree));
+console.timeLog('Post Order Traversal', postOrderTraversal(binaryTree));
 console.timeEnd('Post Order Traversal');

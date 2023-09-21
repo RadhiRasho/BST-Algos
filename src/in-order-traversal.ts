@@ -6,9 +6,7 @@ function inOrderTraversal(head: BinaryNode<number> | undefined) {
 }
 
 function walk(node: BinaryNode<number> | undefined, path: number[]): number[] {
-	if (!node) {
-		return path;
-	}
+	if (!node) return path;
 
 	walk(node.left, path);
 	path.push(node.value);
@@ -20,5 +18,5 @@ function walk(node: BinaryNode<number> | undefined, path: number[]): number[] {
 const binaryTree = generateBinaryTree(1, 10, 0);
 
 console.time('In Order Traversal');
-console.log(inOrderTraversal(binaryTree));
+console.timeLog('In Order Traversal', inOrderTraversal(binaryTree));
 console.timeEnd('In Order Traversal');

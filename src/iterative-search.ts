@@ -16,5 +16,5 @@ function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
 const binaryTree = generateBinaryTree(1, 5, 0);
 
 console.time('iterativeSearch');
-console.log(!!iterativeSearch(binaryTree!, 6));
+console.timeLog('iterativeSearch', !!iterativeSearch(binaryTree!, 6));
 console.timeEnd('iterativeSearch');
