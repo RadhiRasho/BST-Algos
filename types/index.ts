@@ -70,3 +70,45 @@ export class Stack<T> {
 		return this.stack.length === 0;
 	}
 }
+
+type QueueItem<T> = {
+	value: T;
+	priority: number;
+};
+
+export class PriorityQueue<T> {
+	private pque: QueueItem<T>[] = [];
+
+	enqueue(value: T, priority: number) {
+		const queItem: QueueItem<T> = { value, priority };
+		let added = false;
+
+		for (let i = 0; i < this.pque.length; i++) {
+			if (priority < this.pque[i].priority) {
+				this.pque.splice(i, 0, queItem);
+				added = true;
+				break;
+			}
+		}
+
+		if (!added) {
+			this.pque.push(queItem);
+		}
+	}
+
+	dequeue(): T | undefined {
+		return this.pque.shift()?.value;
+	}
+
+	peek(): T | undefined {
+		return this.pque[0]?.value;
+	}
+
+	isEmpty(): boolean {
+		return this.pque.length === 0;
+	}
+
+	size(): number {
+		return this.pque.length;
+	}
+}
