@@ -1,21 +1,18 @@
 function selectionSort(arr: number[]): number[] {
-	let i, j, min;
-
-	for (i = 0; i < arr.length - 1; i++) {
-		min = i;
-		for (j = i + 1; j < arr.length; j++) {
+	for (let i = 0; i < arr.length; i++) {
+		let min = i;
+		for (let j = i + 1; j < arr.length; j++) {
 			if (arr[j] < arr[min]) {
 				min = j;
 			}
-
-			swap(arr, min, i);
 		}
+		swap(arr, i, min);
 	}
 
 	return arr;
 }
 
-function swap(arr: number[], min: number, i: number) {
+function swap(arr: number[], i: number, min: number) {
 	const temp = arr[min];
 	arr[min] = arr[i];
 	arr[i] = temp;
