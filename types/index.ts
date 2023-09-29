@@ -4,6 +4,11 @@ export type BinaryNode<T> = {
 	right?: BinaryNode<T>;
 };
 
+export type Point = {
+	x: number;
+	y: number;
+};
+
 export type LinkedList<T> = {
 	value: T;
 	next?: LinkedList<T>;
@@ -28,10 +33,21 @@ export type GraphNode<T> = {
 export class Queue<T> {
 	private queue: T[] = [];
 	private size: number = 0;
+	private maxSize: number = 10;
+
+	constructor(maxSize: number = 10) {
+		this.maxSize = maxSize;
+	}
 
 	enqueue(value: T): void {
-		this.queue.push(value);
-		this.size++;
+		if (this.size < this.maxSize) {
+			this.queue.push(value);
+			this.size++;
+		} else {
+			throw new Error('Reached Maximum Size', {
+				cause: 'You tried to add more to the queue that the maximum size set',
+			});
+		}
 	}
 
 	dequeue(): T | undefined {
@@ -45,6 +61,10 @@ export class Queue<T> {
 
 	isEmpty(): boolean {
 		return this.queue.length === 0;
+	}
+
+	reachedMax(): boolean {
+		return this.size === this.maxSize;
 	}
 }
 
