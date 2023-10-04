@@ -13,7 +13,7 @@ function quicksort<T>(arr: T[]): T[] {
 		arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
 	}
 
-	return quicksort(left).concat(pivot, quicksort(right));
+	return [...quicksort(left), pivot, ...quicksort(right)];
 }
 
 console.time('QuickSort');

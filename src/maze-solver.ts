@@ -1,5 +1,13 @@
 import { Point } from '../types';
 
+// Define the four possible directions to move in the maze
+var dirs = [
+	[-1, 0], // Up
+	[1, 0], // Down
+	[0, -1], // Left
+	[0, 1], // Right
+];
+
 /**
  * Solves a maze represented as a 2D array of strings, finding a path from the start point to the end point.
  * @param maze The maze to solve, represented as a 2D array of strings.
@@ -31,14 +39,6 @@ export default function solve(
 	return path;
 }
 
-// Define the four possible directions to move in the maze
-var dirs = [
-	[-1, 0], // Up
-	[1, 0], // Down
-	[0, -1], // Left
-	[0, 1], // Right
-];
-
 /**
  * Recursively walks the maze from the current point to the end point, updating the seen array and path array as it goes.
  * @param maze The maze to solve, represented as a 2D array of strings.
@@ -59,11 +59,11 @@ function walk(
 ): boolean {
 	// If the current point is out of bounds or is a wall, return false
 	if (
-		curr.x < 0 ||
-		curr.x >= maze[0].length ||
-		curr.y < 0 ||
-		curr.y >= maze.length ||
-		maze[curr.y][curr.x] == wall
+		curr.x < 0 || // If the current point is outside the left boundary of the maze
+		curr.x >= maze[0].length || // If the current point is outside the right boundary of the maze
+		curr.y < 0 || // If the current point is outside the top boundary of the maze
+		curr.y >= maze.length || // If the current point is outside the bottom boundary of the maze
+		maze[curr.y][curr.x] == wall // If the current point is a wall
 	) {
 		return false;
 	}
@@ -115,3 +115,21 @@ const start = { x: 1, y: 1 };
 const end = { x: 8, y: 7 };
 
 console.log(solve(maze, wall, start, end));
+
+// const maze = [
+// 	'##########',
+// 	'#S       #',
+// 	'# ###### #',
+// 	'# #     ##',
+// 	'# # ######',
+// 	'# #      #',
+// 	'# ###### #',
+// 	'#        #',
+// 	'##########',
+// ];
+
+// const wall = '#';
+// const start = { x: 1, y: 1 };
+// const end = { x: 8, y: 8 };
+
+// console.log(solve(maze, wall, start, end));
