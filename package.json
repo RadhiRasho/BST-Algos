@@ -1,18 +1,16 @@
 {
   "name": "bst-algos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "refresh": "rm -rf node_modules && npm i"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.2.2"
-  },
+  "module": "index.ts",
+  "type": "module",
   "devDependencies": {
-    "@types/node": "^20.6.3"
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/inquirer": "^9.0.7",
+    "glob": "^10.3.10",
+    "inquirer": "^9.2.12"
   }
 }
