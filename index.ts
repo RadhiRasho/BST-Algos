@@ -13,19 +13,17 @@ const files = await glob(`src/*${fileName}*.ts`);
 let file = files[0];
 
 if (files.length > 1) {
-	const answer = await inquirer.prompt({
+	const answer = await inquirer.prompt<{ file: string }>({
 		type: 'list',
-		name: 'name',
+		name: 'file',
 		message: 'Multiple files found, Select a file to run:',
 		choices: files,
 	});
 
-	file = answer.name;
+	file = answer.file;
 }
 
 const bunFile = Bun.file(file);
-
-console.log('Running file:', bunFile.name);
 
 const exist = await bunFile.exists();
 
