@@ -1,34 +1,68 @@
-import { spawn } from 'bun';
-import { glob } from 'glob';
-import inquirer from 'inquirer';
+import { spawn, Glob } from 'bun';
+import { select, text, isCancel, SelectOptions } from '@clack/prompts';
 
 const args = process.argv.slice(2);
 
-const fileName = args[0];
+let fileName = args[0];
 
-if (!fileName) throw new Error('Please provide a file name to run the script');
+if (!fileName) {
+	const answer = await text({
+		message: 'Enter a file name to run (full or partial)',
+		validate: (value) => {
+			if (typeof value !== 'string') {
+				return 'Please enter a string';
+			}
+		},
+		placeholder: 'ring-buffer.ts',
+	});
 
-const files = await glob(`src/*${fileName}*.ts`);
+	if (isCancel(answer)) {
+		process.exit(0);
+	}
+
+	fileName = answer;
+}
+
+const glob: Glob = new Glob(`*${fileName}*`);
+
+const files = await Array.fromAsync(glob.scan());
+
+console.log(files);
 
 let file = files[0];
 
+type Options = {
+	value: string;
+	label: string;
+	hint?: string;
+};
+
+const options = files.map((file) => {
+	return { value: file, label: file };
+});
+
 if (files.length > 1) {
-	const answer = await inquirer.prompt<{ file: string }>({
-		type: 'list',
-		name: 'file',
+	const answer = await select<Options[], string>({
 		message: 'Multiple files found, Select a file to run:',
-		choices: files,
+		options: options,
 	});
 
-	file = answer.file;
+	if (isCancel(answer)) {
+		process.exit(0);
+	}
+
+	file = answer;
 }
 
 const bunFile = Bun.file(file);
 
-const exist = await bunFile.exists();
-
-if (exist && bunFile.name) {
-	spawn(['bun', bunFile.name]);
+if ((await bunFile.exists()) && bunFile.name) {
+	spawn({
+		cmd: ['bun', bunFile.name],
+		stdin: 'inherit',
+		stdout: 'inherit',
+		stderr: 'inherit',
+	});
 } else {
 	throw new Error(`File src/${fileName}.ts does not exist`);
 }
