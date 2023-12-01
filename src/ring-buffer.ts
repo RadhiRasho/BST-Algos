@@ -1,4 +1,4 @@
-import { RingBuffer } from '../types';
+import { RingBuffer } from "../types";
 
 function RingBuf() {
 	const RBuffer = new RingBuffer<number>(5);

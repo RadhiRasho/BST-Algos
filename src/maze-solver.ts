@@ -1,7 +1,7 @@
-import type { Point } from '../types';
+import type { Point } from "../types";
 
 // Define the four possible directions to move in the maze
-var dirs = [
+const dirs = [
 	[-1, 0], // Up
 	[1, 0], // Down
 	[0, -1], // Left
@@ -20,12 +20,12 @@ export default function solve(
 	maze: string[],
 	wall: string,
 	start: Point,
-	end: Point
+	end: Point,
 ): Point[] {
 	// Initialize a 2D array of booleans to keep track of visited cells
-	var seen: boolean[][] = [];
+	const seen: boolean[][] = [];
 	// Initialize an array to store the path from start to end
-	var path: Point[] = [];
+	const path: Point[] = [];
 
 	// Initialize the seen array with false values for all cells
 	for (let i = 0; i < maze.length; i++) {
@@ -55,7 +55,7 @@ function walk(
 	curr: Point,
 	end: Point,
 	seen: boolean[][],
-	path: Point[]
+	path: Point[],
 ): boolean {
 	// If the current point is out of bounds or is a wall, return false
 	if (
@@ -63,13 +63,13 @@ function walk(
 		curr.x >= maze[0].length || // If the current point is outside the right boundary of the maze
 		curr.y < 0 || // If the current point is outside the top boundary of the maze
 		curr.y >= maze.length || // If the current point is outside the bottom boundary of the maze
-		maze[curr.y][curr.x] == wall // If the current point is a wall
+		maze[curr.y][curr.x] === wall // If the current point is a wall
 	) {
 		return false;
 	}
 
 	// If the current point is the end point, add it to the path and return true
-	if (curr.x == end.x && curr.y == end.y) {
+	if (curr.x === end.x && curr.y === end.y) {
 		path.push(end);
 		return true;
 	}
@@ -84,10 +84,8 @@ function walk(
 	path.push(curr);
 
 	// Recursively walk the maze in each of the four possible directions
-	for (let [x, y] of dirs) {
-		if (
-			walk(maze, wall, { x: curr.x + x, y: curr.y + y }, end, seen, path)
-		) {
+	for (const [x, y] of dirs) {
+		if (walk(maze, wall, { x: curr.x + x, y: curr.y + y }, end, seen, path)) {
 			// If a path was found from the current point to the end point, return true
 			return true;
 		}
@@ -99,18 +97,18 @@ function walk(
 }
 
 const maze = [
-	'##########',
-	'#        #',
-	'# ###### #',
-	'# #     ##',
-	'# # ######',
-	'# #      #',
-	'# ###### #',
-	'#        #',
-	'##########',
+	"##########",
+	"#        #",
+	"# ###### #",
+	"# #     ##",
+	"# # ######",
+	"# #      #",
+	"# ###### #",
+	"#        #",
+	"##########",
 ];
 
-const wall = '#';
+const wall = "#";
 const start = { x: 1, y: 1 };
 const end = { x: 8, y: 7 };
 

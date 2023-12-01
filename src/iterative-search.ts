@@ -1,12 +1,13 @@
-import { BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import { BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
 function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
-	while (root) {
-		if (key > root.value) {
-			root = root.right;
-		} else if (key < root.value) {
-			root = root.left;
+	let head = root;
+	while (head) {
+		if (key > head.value) {
+			head = head.right;
+		} else if (key < head.value) {
+			head = head.left;
 		} else {
 			return true;
 		}
@@ -15,6 +16,7 @@ function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
 
 const binaryTree = generateBinaryTree(1, 5, 0);
 
-console.time('iterativeSearch');
-console.timeLog('iterativeSearch', !!iterativeSearch(binaryTree!, 6));
-console.timeEnd('iterativeSearch');
+console.time("iterativeSearch");
+// biome-ignore lint/style/noNonNullAssertion: Because I can
+console.timeLog("iterativeSearch", !!iterativeSearch(binaryTree!, 6));
+console.timeEnd("iterativeSearch");

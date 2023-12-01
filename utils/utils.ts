@@ -1,9 +1,9 @@
-import { BinaryNode, GraphNode } from '../types';
+import { BinaryNode, GraphNode } from "../types";
 
 export function generateBinaryTree(
 	min: number,
 	max: number,
-	d: number
+	d: number,
 ): BinaryNode<number> | undefined {
 	if (min > max) return undefined;
 
@@ -19,7 +19,7 @@ export function generateBinaryTree(
 export function generateGraph(
 	min: number,
 	max: number,
-	d: number
+	d: number,
 ): GraphNode<number> | undefined {
 	if (min > max) return undefined;
 

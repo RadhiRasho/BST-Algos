@@ -1,5 +1,5 @@
-import { type BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import { type BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
 function preOrderTraversal(node: BinaryNode<number> | undefined) {
 	return walk(node, []);
@@ -19,6 +19,6 @@ function walk(node: BinaryNode<number> | undefined, path: number[]): number[] {
 
 const binaryTree = generateBinaryTree(1, 10, 0);
 
-console.time('Pre Order Traversal');
-console.timeLog('Pre Order Traversal', preOrderTraversal(binaryTree));
-console.timeEnd('Pre Order Traversal');
+console.time("Pre Order Traversal");
+console.timeLog("Pre Order Traversal", preOrderTraversal(binaryTree));
+console.timeEnd("Pre Order Traversal");

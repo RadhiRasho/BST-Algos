@@ -1,21 +1,21 @@
-import { PriorityQueue } from '../types';
+import { PriorityQueue } from "../types";
 
 const pque = new PriorityQueue();
 
-pque.enqueue('a', 1);
+pque.enqueue("a", 1);
 
-pque.enqueue('b', 2);
+pque.enqueue("b", 2);
 
-pque.enqueue('c', 3);
+pque.enqueue("c", 3);
 
-pque.enqueue('d', 4);
+pque.enqueue("d", 4);
 
-pque.enqueue('e', 1);
+pque.enqueue("e", 1);
 
-pque.enqueue('f', 2);
+pque.enqueue("f", 2);
 
-pque.enqueue('g', 3);
-pque.enqueue('BOMBA', 0);
+pque.enqueue("g", 3);
+pque.enqueue("BOMBA", 0);
 
 console.log(pque.dequeue()); // BOMBA
 

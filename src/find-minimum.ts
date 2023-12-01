@@ -1,47 +1,51 @@
-import { BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import { BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
-function findMinimum(node: BinaryNode<number>) {
-	if (!node) return -1;
+function findMinimum(node: BinaryNode<number> | undefined) {
+	let head: BinaryNode<number> | undefined = node;
+	if (!head) return -1;
 
-	while (node.left !== undefined) {
-		if (node.left?.value < node.value) {
-			node = node.left;
+	while (head?.left !== undefined) {
+		if (head?.left?.value < head?.value) {
+			head = head.left;
 		} else {
-			node = node.right!;
+			head = head.right;
 		}
 	}
 
-	return node.value;
+	return head?.value;
 }
 
 const binaryTree = generateBinaryTree(
 	Math.round(Math.random() * 100),
 	5000000,
-	0
+	0,
 );
 
-if (!binaryTree) throw new Error('Binary tree is empty');
+if (!binaryTree) throw new Error("Binary tree is empty");
 
-console.time('findMinimum O(log n)');
+console.time("findMinimum O(log n)");
 
-console.timeLog('findMinimum O(log n)', findMinimum(binaryTree));
+console.timeLog("findMinimum O(log n)", findMinimum(binaryTree));
 
-console.timeEnd('findMinimum O(log n)');
+console.timeEnd("findMinimum O(log n)");
 
-function findMinimum2(node: BinaryNode<number>, path: BinaryNode<number>[]) {
+function findMinimum2(
+	node: BinaryNode<number> | undefined,
+	path: BinaryNode<number>[],
+) {
 	if (!node) return -1;
 
-	findMinimum2(node.left!, path);
+	findMinimum2(node?.left, path);
 	path.push(node);
-	findMinimum2(node.right!, path);
+	findMinimum2(node?.right, path);
 
 	return path[0].value;
 }
 
-console.time('findMinimum O(n)');
+console.time("findMinimum O(n)");
 console.timeLog(
-	'findMinimum O(n)',
-	findMinimum2(binaryTree, [] as BinaryNode<number>[])
+	"findMinimum O(n)",
+	findMinimum2(binaryTree, [] as BinaryNode<number>[]),
 );
-console.timeEnd('findMinimum O(n)');
+console.timeEnd("findMinimum O(n)");

@@ -1,6 +1,6 @@
 export class Stack<T> {
 	private stack: T[] = [];
-	private size: number = 0;
+	private size = 0;
 
 	push(value: T): void {
 		this.stack.push(value);

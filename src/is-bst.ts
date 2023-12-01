@@ -1,5 +1,5 @@
-import type { BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import type { BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
 function isBST(root: BinaryNode<number> | undefined): boolean {
 	if (!root) return true;
@@ -23,10 +23,10 @@ const binaryTree: BinaryNode<number> = {
 
 const binaryTree2 = generateBinaryTree(1, 10, 0);
 
-console.time('isBST BAD');
-console.timeLog('isBST BAD', isBST(binaryTree));
-console.timeEnd('isBST BAD');
+console.time("isBST BAD");
+console.timeLog("isBST BAD", isBST(binaryTree));
+console.timeEnd("isBST BAD");
 
-console.time('isBST GOOD');
-console.timeLog('isBST GOOD', isBST(binaryTree2));
-console.timeEnd('isBST GOOD');
+console.time("isBST GOOD");
+console.timeLog("isBST GOOD", isBST(binaryTree2));
+console.timeEnd("isBST GOOD");

@@ -2,7 +2,7 @@ function bubbleSort(arr: number[]): number[] {
 	for (let i = 0; i < arr.length; i++) {
 		for (let j = 0; j < arr.length; j++) {
 			if (arr[i] < arr[j]) {
-				let temp = arr[i];
+				const temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
 			}
@@ -12,14 +12,14 @@ function bubbleSort(arr: number[]): number[] {
 	return arr;
 }
 
-console.time('bubbleSort');
-console.timeLog('bubbleSort', bubbleSort([5, 4, 3, 2, 1]));
+console.time("bubbleSort");
+console.timeLog("bubbleSort", bubbleSort([5, 4, 3, 2, 1]));
 console.timeLog(
-	'bubbleSort',
+	"bubbleSort",
 	bubbleSort([
-		5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2,
-		1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3,
-		2, 1, 5, 4, 3, 2, 1,
-	])
+		5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5,
+		4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4,
+		3, 2, 1,
+	]),
 );
-console.timeEnd('bubbleSort');
+console.timeEnd("bubbleSort");

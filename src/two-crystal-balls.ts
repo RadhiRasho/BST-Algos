@@ -19,9 +19,9 @@ export default function twoCrystalBalls(breaks: boolean[]): number {
 	return -1;
 }
 
-console.time('twoCrystalBalls');
+console.time("twoCrystalBalls");
 console.timeLog(
-	'twoCrystalBalls',
+	"twoCrystalBalls",
 	twoCrystalBalls([
 		false,
 		false,
@@ -63,6 +63,6 @@ console.timeLog(
 		false,
 		false,
 		true,
-	])
+	]),
 );
-console.timeEnd('twoCrystalBalls');
+console.timeEnd("twoCrystalBalls");

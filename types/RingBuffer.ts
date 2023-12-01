@@ -25,11 +25,11 @@ export class RingBuffer<T> {
 	}
 
 	pop(): T | undefined {
-		if (this.length == 0) {
+		if (this.length === 0) {
 			return undefined;
 		}
 
-		var item = this.data[this.head];
+		const item = this.data[this.head];
 		this.data[this.head] = undefined;
 		this.head = (this.head + 1) % this.capacity;
 		this.length--;
@@ -37,7 +37,7 @@ export class RingBuffer<T> {
 	}
 
 	peek(): T | undefined {
-		if (this.length == 0) {
+		if (this.length === 0) {
 			return undefined;
 		}
 

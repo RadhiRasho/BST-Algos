@@ -2,6 +2,7 @@
   "name": "bst-algos",
   "module": "index.ts",
   "devDependencies": {
+    "@biomejs/biome": "^1.4.0",
     "bun-types": "latest"
   },
   "peerDependencies": {
@@ -10,5 +11,8 @@
   "type": "module",
   "dependencies": {
     "@clack/prompts": "^0.7.0"
+  },
+  "scripts": {
+    "lint": "biome format ./src"
   }
 }

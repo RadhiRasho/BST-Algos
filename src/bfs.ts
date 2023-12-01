@@ -1,11 +1,11 @@
-import { BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import { BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
 function BreathFirstSearch(
 	head: BinaryNode<number> | undefined,
-	needle: number
+	needle: number,
 ): boolean {
-	let queue: Array<BinaryNode<number> | undefined> = [head];
+	const queue: Array<BinaryNode<number> | undefined> = [head];
 
 	while (queue.length > 0) {
 		const node = queue.shift();
@@ -26,6 +26,6 @@ function BreathFirstSearch(
 
 const binaryTree = generateBinaryTree(1, 10, 0);
 
-console.time('BreathFirstSearch');
-console.timeLog('BreathFirstSearch', BreathFirstSearch(binaryTree, 8));
-console.timeEnd('BreathFirstSearch');
+console.time("BreathFirstSearch");
+console.timeLog("BreathFirstSearch", BreathFirstSearch(binaryTree, 8));
+console.timeEnd("BreathFirstSearch");

@@ -1,7 +1,7 @@
-import { Stack } from '../types';
+import { Stack } from "../types";
 
 function stack() {
-	let stack = new Stack<number>();
+	const stack = new Stack<number>();
 
 	stack.push(1);
 	stack.push(2);

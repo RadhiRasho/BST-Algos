@@ -1,4 +1,4 @@
-import { BinaryNode, Queue } from '../types';
+import { BinaryNode, Queue } from "../types";
 
 function queue() {
 	try {

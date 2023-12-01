@@ -1,9 +1,9 @@
 export class Queue<T> {
 	private queue: T[] = [];
-	private size: number = 0;
-	private maxSize: number = 10;
+	private size = 0;
+	private maxSize = 10;
 
-	constructor(maxSize: number = 10) {
+	constructor(maxSize = 10) {
 		this.maxSize = maxSize;
 	}
 
@@ -12,8 +12,8 @@ export class Queue<T> {
 			this.queue.push(value);
 			this.size++;
 		} else {
-			throw new Error('Reached Maximum Size', {
-				cause: 'You tried to add more to the queue that the maximum size set',
+			throw new Error("Reached Maximum Size", {
+				cause: "You tried to add more to the queue that the maximum size set",
 			});
 		}
 	}

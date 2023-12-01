@@ -1,5 +1,5 @@
-import { BinaryNode } from '../types';
-import { generateBinaryTree } from '../utils/utils';
+import { BinaryNode } from "../types";
+import { generateBinaryTree } from "../utils/utils";
 
 function inOrderTraversal(head: BinaryNode<number> | undefined) {
 	return walk(head, []);
@@ -17,6 +17,6 @@ function walk(node: BinaryNode<number> | undefined, path: number[]): number[] {
 
 const binaryTree = generateBinaryTree(1, 10, 0);
 
-console.time('In Order Traversal');
-console.timeLog('In Order Traversal', inOrderTraversal(binaryTree));
-console.timeEnd('In Order Traversal');
+console.time("In Order Traversal");
+console.timeLog("In Order Traversal", inOrderTraversal(binaryTree));
+console.timeEnd("In Order Traversal");
