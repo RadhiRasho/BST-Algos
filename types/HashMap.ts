@@ -1,25 +1,25 @@
-export class HashMap<K, V> {
-	private _keys: K[];
-	private _values: V[];
+export class HashMap<KeyType extends string, ValueType extends boolean> {
+	private keys: KeyType[];
+	private values: ValueType[];
 
 	constructor(size = 0) {
-		this._keys = new Array<K>(size);
-		this._values = new Array<V>(size);
+		this.keys = new Array<KeyType>(size);
+		this.values = new Array<ValueType>(size);
 	}
 
-	get(key: K): V | undefined {
-		const index = this._keys.indexOf(key);
-		if (index === -1) return undefined;
-		return this._values[index];
+	get(key: KeyType): ValueType | null {
+		const index = this.keys.indexOf(key);
+		if (index === -1) return null;
+		return this.values[index];
 	}
 
-	set(key: K, value: V) {
-		const index = this._keys.indexOf(key);
+	set(key: KeyType, value: ValueType) {
+		const index = this.keys.indexOf(key);
 		if (index === -1) {
-			this._keys.push(key);
-			this._values.push(value);
+			this.keys.push(key);
+			this.values.push(value);
 		} else {
-			this._values[index] = value;
+			this.values[index] = value;
 		}
 	}
 }

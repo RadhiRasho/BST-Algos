@@ -13,6 +13,7 @@
     "@clack/prompts": "^0.7.0"
   },
   "scripts": {
-    "lint": "biome format ./src"
+    "lint": "biome lint --apply .",
+    "format": "biome format --write ."
   }
 }

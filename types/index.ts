@@ -6,3 +6,4 @@ export * from "./Queue";
 export * from "./Stack";
 export * from "./TreeNode";
 export * from "./RingBuffer";
+export * from './HashMap'

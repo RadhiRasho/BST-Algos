@@ -1,12 +1,12 @@
-import { HashMap } from "../types/HashMap";
+import { HashMap } from "@/types";
 
 function uniqueString(s: string) {
 	if (s.length > 128) return false;
 
-	const char_set = new HashMap<string, boolean>();
+	const char_set = new HashMap<string, boolean>(128);
 
 	for (let i = 0; i < s.length; i++) {
-		const val: string = s.charAt(i);
+		const val = s.charAt(i);
 		if (char_set.get(val)) {
 			return false;
 		}
@@ -17,10 +17,10 @@ function uniqueString(s: string) {
 }
 
 console.time("uniqueString");
-console.log("uniqueString", uniqueString("abcde"));
-console.log("uniqueString", uniqueString("abcdea"));
-console.log("uniqueString", uniqueString("abcdeaa"));
-console.log("uniqueString", uniqueString("abcdeaaa"));
-console.log("uniqueString", uniqueString("abcdeaaaa"));
-console.log("uniqueString", uniqueString("abcdeaaaaa"));
+console.timeLog("uniqueString", uniqueString("abcde"));
+console.timeLog("uniqueString", uniqueString("abcdea"));
+console.timeLog("uniqueString", uniqueString("abcdeaa"));
+console.timeLog("uniqueString", uniqueString("abcdeaaa"));
+console.timeLog("uniqueString", uniqueString("abcdeaaaa"));
+console.timeLog("uniqueString", uniqueString("abcdeaaaaa"));
 console.timeEnd("uniqueString");
