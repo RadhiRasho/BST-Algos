@@ -13,7 +13,7 @@ if (!fileName) {
 				return "Please enter a string";
 			}
 		},
-		placeholder: "ring-buffer.ts",
+		placeholder: "ring",
 	});
 
 	if (isCancel(answer)) {
@@ -23,11 +23,11 @@ if (!fileName) {
 	fileName = answer;
 }
 
-const glob: Glob = new Glob(`src/*${fileName}*`);
+const glob = new Glob(`src/*${fileName}*`);
 
 const files = await Array.fromAsync(glob.scan());
 
-let file = files[0];
+let file: string = files[0];
 
 type Options = {
 	value: string;
@@ -51,6 +51,8 @@ if (files.length > 1) {
 
 	file = answer;
 }
+
+console.log(file)
 
 const bunFile = Bun.file(file);
 

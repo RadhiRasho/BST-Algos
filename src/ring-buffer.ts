@@ -8,7 +8,6 @@ function RingBuf() {
 	RBuffer.push(3);
 	RBuffer.push(4);
 
-	console.log(RBuffer);
 	console.log(RBuffer.isEmpty());
 
 	console.log(RBuffer.peek());
