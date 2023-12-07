@@ -1,14 +1,12 @@
-// FIFO
-// Implemented with ARRAYS and LINKED LISTS
 export class RingBuffer<T> {
-	length = 0;
-	private data: (T | undefined)[];
-	private head = 0;
-	private tail = 0;
-	private capacity = 5;
+	private length = 0;
+	public data: (T | undefined)[];
+	public head = 0;
+	public tail = 0;
+	public capacity = 5;
 
 	constructor(capacity = 5) {
-		this.data = Array.from({ length: capacity }, () => undefined);
+		this.data = new Array<T>(capacity);
 	}
 
 	push(item: T): void {
@@ -38,7 +36,7 @@ export class RingBuffer<T> {
 
 	peek(): T | undefined {
 		if (this.length === 0) {
-			return undefined;
+			throw new Error("Cannot peek empty buffer");
 		}
 
 		return this.data[this.head];
@@ -46,5 +44,25 @@ export class RingBuffer<T> {
 
 	isEmpty(): boolean {
 		return this.length === 0;
+	}
+
+	isFull(): boolean {
+		return this.length === this.capacity;
+	}
+
+	toString(): string {
+		return this.data.toString();
+	}
+
+	toArray(): (T | undefined)[] {
+		return this.data;
+	}
+
+	getLength(): number {
+		return this.length;
+	}
+
+	getCapacity(): number {
+		return this.capacity;
 	}
 }

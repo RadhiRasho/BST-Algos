@@ -1,6 +1,6 @@
 import { RingBuffer } from "../types";
 
-function RingBuf() {
+export function ringBuffer() {
 	const RBuffer = new RingBuffer<number>(5);
 
 	RBuffer.push(1);
@@ -26,4 +26,4 @@ function RingBuf() {
 	console.log(RBuffer.peek());
 }
 
-RingBuf();
+ringBuffer();

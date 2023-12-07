@@ -52,7 +52,7 @@ if (files.length > 1) {
 	file = answer;
 }
 
-console.log(file)
+console.log(file);
 
 const bunFile = Bun.file(file);
 

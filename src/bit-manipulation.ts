@@ -1,60 +1,81 @@
-const a = 5;
-const b = 0;
+console.log(
+	"===================== Bit Manipulation Intro =====================",
+);
 
-let result;
+{
+	const a = 5;
+	const b = 0;
 
-result = a & b;
-console.log("(a & b) =>", result);
+	let result;
 
-result = a | b;
-console.log("(a | b) =>", result);
+	result = a & b;
+	console.log("(a & b) =>", result);
 
-result = a ^ b;
-console.log("(a ^ b) =>", result);
+	result = a | b;
+	console.log("(a | b) =>", result);
 
-result = ~a;
-console.log("(~a) =>", result);
+	result = a ^ b;
+	console.log("(a ^ b) =>", result);
 
-result = ~b;
-console.log("(~b) =>", result);
+	result = ~a;
+	console.log("(~a) =>", result);
 
-result = a >> b;
-console.log("(a >> b) =>", result);
+	result = ~b;
+	console.log("(~b) =>", result);
 
-result = a >>> b;
-console.log("(a >>> b) =>", result);
+	result = a >> b;
+	console.log("(a >> b) =>", result);
 
-result = a << b;
-console.log("(a << b) =>", result);
+	result = a >>> b;
+	console.log("(a >>> b) =>", result);
 
-const bug = 101;
-const slug = 0;
-const tug = 101;
-
-if (bug ^ slug) {
-	console.log(bug, slug, bug ^ slug);
+	result = a << b;
+	console.log("(a << b) =>", result);
 }
 
-if (bug ^ tug) {
-	console.log(bug, tug, bug ^ tug);
-} else {
-	console.log("Else", bug, tug, bug ^ tug);
+console.log("===================== OR & XOR =====================");
+
+{
+	const bug = 101;
+	const slug = 0;
+	const tug = 101;
+
+	if (bug ^ slug) {
+		console.log(bug, slug, bug ^ slug);
+	}
+
+	if (bug ^ tug) {
+		console.log(bug, tug, bug ^ tug);
+	} else {
+		console.log("Else", bug, tug, bug ^ tug);
+	}
+
+	if (bug | tug) {
+		console.log(bug, tug, bug | tug);
+	}
+
+	if (bug | slug) {
+		console.log(bug, slug, bug | slug);
+	}
+
+	if (slug | bug) {
+		console.log(slug, bug, slug | bug);
+	}
+
+	if (slug | slug) {
+		console.log(slug, slug | slug);
+	} else {
+		console.log("Else", slug, slug | slug);
+	}
 }
 
-if (bug | tug) {
-	console.log(bug, tug, bug | tug);
-}
+console.log("===================== AND operator =====================");
 
-if (bug | slug) {
-	console.log(bug, slug, bug | slug);
-}
+{
+	const a = 6;
+	const b = 15;
 
-if (slug | bug) {
-	console.log(slug, bug, slug | bug);
-}
-
-if (slug | slug) {
-	console.log(slug, slug | slug);
-} else {
-	console.log("Else", slug, slug | slug);
+	console.log(a.toString(2));
+	console.log(b.toString(2));
+	console.log(b & a);
 }
