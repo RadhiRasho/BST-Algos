@@ -1,12 +1,10 @@
-console.log(
-	"===================== Bit Manipulation Intro =====================",
-);
+console.log("==================== Bit Manipulation Intro ====================");
 
 {
 	const a = 5;
 	const b = 0;
 
-	let result;
+	let result: number;
 
 	result = a & b;
 	console.log("(a & b) =>", result);

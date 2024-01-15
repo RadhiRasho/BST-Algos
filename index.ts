@@ -13,7 +13,6 @@ if (!fileName) {
 				return "Please enter a string";
 			}
 		},
-		placeholder: "ring",
 	});
 
 	if (isCancel(answer)) {
