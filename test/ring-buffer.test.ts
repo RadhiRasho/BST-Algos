@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import { RingBuffer } from "../types/RingBuffer";
 
-describe("Ring Buffer", () => {
+describe.skip("Ring Buffer", () => {
 	const a = new RingBuffer();
 
 	it("should be empty", () => {

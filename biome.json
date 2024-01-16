@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.4.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.5.2/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -10,7 +10,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
 		}
 	},
 	"formatter": {
@@ -18,5 +21,10 @@
 		"lineEnding": "lf",
 		"indentStyle": "tab",
 		"indentWidth": 1
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"defaultBranch": "master"
 	}
 }

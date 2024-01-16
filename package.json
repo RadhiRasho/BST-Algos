@@ -2,19 +2,20 @@
   "name": "bst-algos",
   "module": "index.ts",
   "devDependencies": {
-    "@biomejs/biome": "^1.4.0",
+    "@biomejs/biome": "latest",
     "bun-types": "latest",
-    "jasmine": "^5.1.0"
+    "jasmine": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "latest"
   },
   "type": "module",
   "dependencies": {
-    "@clack/prompts": "^0.7.0"
+    "@clack/prompts": "latest"
   },
   "scripts": {
     "lint": "biome lint --apply .",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "biome": "bun format && bun lint"
   }
 }
