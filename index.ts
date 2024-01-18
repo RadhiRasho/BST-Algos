@@ -51,8 +51,6 @@ if (files.length > 1) {
 	file = answer;
 }
 
-console.log(file);
-
 const bunFile = Bun.file(file);
 
 const exists = await bunFile.exists();
