@@ -36,7 +36,7 @@ export class RingBuffer<T> {
 
 	peek(): T | undefined | string {
 		if (this.isEmpty()) {
-			return "Cannot peek empty buffer";
+			return "Peak a boo, where is everyone";
 		}
 
 		return this.data[this.head];
