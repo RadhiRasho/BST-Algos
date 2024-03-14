@@ -35,3 +35,15 @@ export function generateGraph(
 		edges,
 	};
 }
+
+export async function retry<T>(func: () => Promise<T>, threshold = 5) {
+	try {
+		return await func();
+	} catch (err) {
+		if (threshold > 0) {
+			console.log("Retrying...");
+			return await retry<T>(func, threshold - 1);
+		}
+		throw err;
+	}
+}
