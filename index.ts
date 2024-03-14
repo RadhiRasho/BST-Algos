@@ -1,5 +1,5 @@
-import { spawn, Glob } from "bun";
-import { select, text, isCancel } from "@clack/prompts";
+import { isCancel, select, text } from "@clack/prompts";
+import { Glob, spawn } from "bun";
 
 const args = process.argv.slice(2);
 

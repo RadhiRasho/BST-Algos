@@ -14,8 +14,6 @@
     "@clack/prompts": "latest"
   },
   "scripts": {
-    "lint": "biome lint --apply .",
-    "format": "biome format --write .",
-    "biome": "bun format && bun lint"
+    "biome": "biome check --apply ."
   }
 }
