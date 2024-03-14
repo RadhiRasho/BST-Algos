@@ -24,6 +24,8 @@ export function ringBuffer() {
 
 	console.log(RBuffer.isEmpty());
 	console.log(RBuffer.peek());
+
+	console.log(RBuffer.isEmpty());
 }
 
 ringBuffer();

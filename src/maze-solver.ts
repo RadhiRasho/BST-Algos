@@ -29,7 +29,7 @@ export default function solve(
 
 	// Initialize the seen array with false values for all cells
 	for (let i = 0; i < maze.length; i++) {
-		seen.push(new Array(maze[0].length).fill(false));
+		seen.push(Array.from<boolean>({ length: maze[0].length }).fill(false));
 	}
 
 	// Recursively walk the maze from the start point to the end point

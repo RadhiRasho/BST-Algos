@@ -6,7 +6,7 @@ export class RingBuffer<T> {
 	public capacity = 5;
 
 	constructor(capacity = 5) {
-		this.data = new Array<T>(capacity);
+		this.data = Array.from<T>({ length: capacity });
 	}
 
 	push(item: T): void {
@@ -34,9 +34,9 @@ export class RingBuffer<T> {
 		return item;
 	}
 
-	peek(): T | undefined {
-		if (this.length === 0) {
-			throw new Error("Cannot peek empty buffer");
+	peek(): T | undefined | string {
+		if (this.isEmpty()) {
+			return "Cannot peek empty buffer";
 		}
 
 		return this.data[this.head];

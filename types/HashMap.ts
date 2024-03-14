@@ -3,8 +3,8 @@ export class HashMap<KeyType extends string, ValueType extends boolean> {
 	private values: ValueType[];
 
 	constructor(size = 0) {
-		this.keys = new Array<KeyType>(size);
-		this.values = new Array<ValueType>(size);
+		this.keys = Array.from<KeyType>({ length: size });
+		this.values = Array.from<ValueType>({ length: size });
 	}
 
 	get(key: KeyType): ValueType | null {
