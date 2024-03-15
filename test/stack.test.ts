@@ -1,4 +1,4 @@
-import { describe, test, expect } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import { Stack } from "../types/Stack";
 
 describe("Testing a Stack", () => {

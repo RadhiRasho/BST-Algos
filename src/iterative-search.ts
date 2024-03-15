@@ -1,4 +1,4 @@
-import { BinaryNode } from "../types";
+import type { BinaryNode } from "../types";
 import { generateBinaryTree } from "../utils/utils";
 
 function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
