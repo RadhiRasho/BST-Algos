@@ -1,4 +1,4 @@
-import type { BinaryNode } from "../types";
+import type { BinaryNode } from "@/types/BinaryNode";
 import { generateBinaryTree } from "../utils/utils";
 
 function findMinimum(node: BinaryNode<number> | undefined) {

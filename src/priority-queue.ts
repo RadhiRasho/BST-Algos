@@ -1,4 +1,4 @@
-import { PriorityQueue } from "../types";
+import { PriorityQueue } from "@/types/Queue";
 
 const pque = new PriorityQueue();
 

@@ -1,4 +1,4 @@
-import type { Point } from "../types";
+import type { Point } from "@/types/Point";
 
 // Define the four possible directions to move in the maze
 const dirs = [

@@ -1,4 +1,4 @@
-import { RingBuffer } from "../types";
+import { RingBuffer } from "@/types/RingBuffer";
 
 export function ringBuffer() {
 	const RBuffer = new RingBuffer<number>(5);
@@ -30,5 +30,3 @@ export function ringBuffer() {
 	console.log(RBuffer.isEmpty());
 	console.log(RBuffer.peek());
 }
-
-ringBuffer();

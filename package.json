@@ -1,19 +1,17 @@
 {
   "name": "bst-algos",
   "module": "index.ts",
-  "devDependencies": {
-    "@biomejs/biome": "latest",
-    "@types/bun": "^1.0.8"
-  },
-  "peerDependencies": {
-    "typescript": "latest"
-  },
   "type": "module",
   "dependencies": {
     "@clack/prompts": "latest"
   },
-  "scripts": {
-    "biome": "biome check --apply ."
+  "devDependencies": {
+    "@biomejs/biome": "latest",
+    "@types/bun": "^1.0.8",
+    "lefthook": "^1.6.7"
+  },
+  "peerDependencies": {
+    "typescript": "latest"
   },
   "trustedDependencies": [
     "@biomejs/biome"

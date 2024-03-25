@@ -17,8 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "paths": {
-      "@/types": [
-        "./types"
+      "@/*": [
+        "./*"
       ]
     }
   }

@@ -1,4 +1,4 @@
-import { Node } from "../types";
+import { Node } from "@/types/Node";
 
 function height(root: Node<number> | null): number {
 	if (root == null) {

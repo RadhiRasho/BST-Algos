@@ -1,4 +1,4 @@
-import { Stack } from "../types";
+import { Stack } from "@/types/Stack";
 
 function stack() {
 	const stack = new Stack<number>();

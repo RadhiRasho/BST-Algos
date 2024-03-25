@@ -1,4 +1,4 @@
-import { HashMap } from "@/types";
+import { HashMap } from "@/types/HashMap";
 
 function uniqueString(s: string) {
 	if (s.length > 128) return false;

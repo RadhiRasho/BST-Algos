@@ -1,4 +1,5 @@
-import type { BinaryNode, GraphNode } from "../types";
+import type { BinaryNode } from "@/types/BinaryNode";
+import type { GraphNode } from "@/types/GraphNode";
 
 export function generateBinaryTree(
 	min: number,

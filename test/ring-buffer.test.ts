@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { RingBuffer } from "../types/RingBuffer";
+import { RingBuffer } from "@/types/RingBuffer";
 
 describe("Ring Buffer", () => {
 	const a = new RingBuffer();

@@ -1,4 +1,4 @@
-import type { BinaryNode } from "../types";
+import type { BinaryNode } from "@/types/BinaryNode";
 import { generateBinaryTree } from "../utils/utils";
 
 function isBST(root: BinaryNode<number> | undefined): boolean {
