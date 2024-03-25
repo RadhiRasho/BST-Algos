@@ -44,6 +44,8 @@ if (files.length > 1) {
 		options: options,
 	});
 
+	console.log("\n");
+
 	if (isCancel(answer)) {
 		process.exit(0);
 	}
