@@ -1,44 +1,4 @@
-import { Queue } from "@/types/Queue";
-
-class TaskQueue<T> {
-	private queue: Queue<T>;
-	private pendingPromise = false;
-
-	constructor(size = 2) {
-		this.queue = new Queue<T>(size);
-	}
-
-	enqueue(value: T): void {
-		this.queue.enqueue(value);
-	}
-
-	async dequeue(): Promise<boolean | T> {
-		if (this.pendingPromise) return false;
-
-		const item = this.queue.dequeue();
-
-		if (!item) return false;
-
-		try {
-			this.pendingPromise = true;
-
-			const payload = await item;
-			this.pendingPromise = false;
-
-			return payload;
-		} catch (error) {
-			console.error("Error dequeuing item:", error);
-
-			return Promise.reject(error);
-		} finally {
-			this.pendingPromise = false;
-		}
-	}
-
-	isEmpty() {
-		return this.queue.isEmpty();
-	}
-}
+import { TaskQueue } from "@/types/Queue";
 
 function sleep() {
 	return new Promise((res) => setTimeout(res, 1000));
