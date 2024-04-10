@@ -1,20 +1,21 @@
 import { Queue } from "@/types/Queue";
 
-class TaskQueue<T> extends Queue<T> {
+class TaskQueue<T> {
+	private queue: Queue<T>;
 	private pendingPromise = false;
 
 	constructor(size = 2) {
-		super(size);
+		this.queue = new Queue<T>(size);
 	}
 
 	enqueue(value: T): void {
-		super.enqueue(value);
+		this.queue.enqueue(value);
 	}
 
-	async dequeue(): Promise<T | boolean> {
+	async dequeue(): Promise<boolean | T> {
 		if (this.pendingPromise) return false;
 
-		const item = super.dequeue();
+		const item = this.queue.dequeue();
 
 		if (!item) return false;
 
@@ -33,6 +34,10 @@ class TaskQueue<T> extends Queue<T> {
 			this.pendingPromise = false;
 		}
 	}
+
+	isEmpty() {
+		return this.queue.isEmpty();
+	}
 }
 
 function sleep() {
@@ -50,7 +55,7 @@ function randomNumber(threshold = 200) {
 	return rand;
 }
 
-const queue = new TaskQueue<Promise<any>>(20);
+const queue = new TaskQueue<Promise<unknown>>(20);
 
 for (let i = 0; i < 10; i++) {
 	const res = await fetch(

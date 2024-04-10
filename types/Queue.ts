@@ -18,9 +18,13 @@ export class Queue<T> {
 		}
 	}
 
-	dequeue(): T | undefined {
+	dequeue(): T {
 		this.size--;
-		return this.queue.shift();
+		const data = this.queue.shift();
+
+		if (!data) throw new Error("No Data in Item");
+
+		return data;
 	}
 
 	peek(): T | undefined {
