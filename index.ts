@@ -26,7 +26,7 @@ const glob = new Glob(`src/*${fileName}*`);
 
 const files = await Array.fromAsync(glob.scan());
 
-let file: string = files[0];
+let file = files.length === 1 ? files[0] : undefined;
 
 type Options = {
 	value: string;
@@ -51,6 +51,10 @@ if (files.length > 1) {
 	}
 
 	file = answer;
+}
+
+if (!file) {
+	throw new Error("No Such File");
 }
 
 const bunFile = Bun.file(file);
