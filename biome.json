@@ -10,14 +10,25 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"complexity": {
+				"recommended": true
+			},
+			"style": {
+				"recommended": true
+			}
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		},
+		"parser": {
+			"allowComments": true
 		}
 	},
 	"formatter": {
-		"enabled": true,
-		"lineEnding": "lf",
-		"indentStyle": "tab",
-		"indentWidth": 1
+		"enabled": true
 	},
 	"vcs": {
 		"enabled": true,
