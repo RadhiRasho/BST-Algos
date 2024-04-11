@@ -64,7 +64,6 @@ const exists = await bunFile.exists();
 if (exists && bunFile.name) {
 	spawn({
 		cmd: ["bun", bunFile.name],
-		stdin: "inherit",
 		stdout: "inherit",
 		stderr: "inherit",
 	});
