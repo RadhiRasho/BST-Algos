@@ -22,7 +22,7 @@ if (!fileName) {
 	fileName = answer;
 }
 
-const glob = new Glob(`src/*${fileName}*`);
+const glob = new Glob(`src/**/*${fileName}*`);
 
 const files = await Array.fromAsync(glob.scan());
 
