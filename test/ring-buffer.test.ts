@@ -32,10 +32,6 @@ describe("Ring Buffer", () => {
 		expect(a.data.length).toBe(5);
 	});
 
-	it("should have data length 5", () => {
-		expect(a.data.length).toBe(5);
-	});
-
 	it("should push 1", () => {
 		a.push(1);
 		expect(a.getLength()).toBe(1);
