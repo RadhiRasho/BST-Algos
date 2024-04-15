@@ -5,7 +5,7 @@ export type ComputeRange<
 	? Result
 	: ComputeRange<N, [...Result, Result["length"]]>;
 
-// 0 to 100
-export type NumberRange<N extends number> = ComputeRange<N>[number];
+// 0 to N range
+export type NumberRange<N extends number> = ComputeRange<N>[never];
 
 export type Percent = `${NumberRange<101>}%`;
