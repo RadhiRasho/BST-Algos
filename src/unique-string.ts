@@ -1,6 +1,6 @@
 import { HashMap } from "@/types/HashMap";
 
-function uniqueString(s: string) {
+export function UniqueString(s: string) {
 	if (s.length > 128) return false;
 
 	const char_set = new HashMap<string, boolean>(128);
@@ -15,12 +15,3 @@ function uniqueString(s: string) {
 
 	return true;
 }
-
-console.time("uniqueString");
-console.timeLog("uniqueString", uniqueString("abcde"));
-console.timeLog("uniqueString", uniqueString("abcdea"));
-console.timeLog("uniqueString", uniqueString("abcdeaa"));
-console.timeLog("uniqueString", uniqueString("abcdeaaa"));
-console.timeLog("uniqueString", uniqueString("abcdeaaaa"));
-console.timeLog("uniqueString", uniqueString("abcdeaaaaa"));
-console.timeEnd("uniqueString");

@@ -1,4 +1,4 @@
-export default function twoCrystalBalls(breaks: boolean[]): number {
+export function twoCrystalBalls(breaks: boolean[]): number {
 	let i = 0;
 	const jumpAmount = Math.floor(Math.sqrt(breaks.length));
 
@@ -18,51 +18,3 @@ export default function twoCrystalBalls(breaks: boolean[]): number {
 
 	return -1;
 }
-
-console.time("twoCrystalBalls");
-console.timeLog(
-	"twoCrystalBalls",
-	twoCrystalBalls([
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		true,
-	]),
-);
-console.timeEnd("twoCrystalBalls");
