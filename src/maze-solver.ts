@@ -14,8 +14,7 @@ const dirs = [
  * @param wall The string representation of a wall in the maze.
  * @param start The starting point in the maze.
  * @param end The ending point in the maze.
- * @returns An array of points representing the path from the start point to the end point, or an empty array if no path was found.
- */
+ * @returns An array of points representing the path from the start point to the end point, or an empty array if no path was found. */
 export default function solve(
 	maze: string[],
 	wall: string,
@@ -47,8 +46,7 @@ export default function solve(
  * @param end The ending point in the maze.
  * @param seen The 2D array of booleans representing visited cells in the maze.
  * @param path The array of points representing the path from start to end.
- * @returns True if a path was found from the current point to the end point, false otherwise.
- */
+ * @returns True if a path was found from the current point to the end point, false otherwise. */
 function walk(
 	maze: string[],
 	wall: string,
