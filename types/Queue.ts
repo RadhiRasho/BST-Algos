@@ -53,7 +53,7 @@ export class TaskQueue<T> {
 	}
 
 	async dequeue(): Promise<boolean | T> {
-		if (this.pendingPromise) return false;
+		if (this.pendingPromise || this.queue.isEmpty()) return false;
 
 		const item = this.queue.dequeue();
 
@@ -67,8 +67,6 @@ export class TaskQueue<T> {
 
 			return payload;
 		} catch (error) {
-			console.error("Error dequeuing item:", error);
-
 			return Promise.reject(error);
 		} finally {
 			this.pendingPromise = false;
