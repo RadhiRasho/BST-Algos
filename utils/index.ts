@@ -42,7 +42,7 @@ export async function retryAsync<T>(func: () => Promise<T>, threshold = 5) {
 		return await func();
 	} catch (err) {
 		if (threshold > 0) {
-			console.log("Asynchronously Retrying...");
+			// console.log("Asynchronously Retrying...");
 			return await retryAsync<T>(func, threshold - 1);
 		}
 		throw err;
@@ -54,9 +54,25 @@ export function retry<T>(func: () => T, threshold = 5) {
 		return func();
 	} catch (err) {
 		if (threshold > 0) {
-			console.log("Synchronously Retrying...");
+			// console.log("Synchronously Retrying...");
 			return retry<T>(func, threshold - 1);
 		}
 		throw err;
 	}
+}
+
+export function padLeft(padding: number | string, input: string) {
+	if (typeof padding === "number") {
+		return " ".repeat(padding) + input;
+	}
+
+	return padding + input;
+}
+
+export function padRight(padding: string | number, input: string) {
+	if (typeof padding === "number") {
+		return input + " ".repeat(padding);
+	}
+
+	return input + padding;
 }

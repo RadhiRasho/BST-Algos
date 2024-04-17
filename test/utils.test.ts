@@ -1,5 +1,12 @@
 import { describe, expect, it } from "bun:test";
-import { generateBinaryTree, generateGraph, retry, retryAsync } from "@/utils";
+import {
+	generateBinaryTree,
+	generateGraph,
+	padLeft,
+	padRight,
+	retry,
+	retryAsync,
+} from "@/utils";
 
 describe("utils", () => {
 	describe("generateBinaryTree", () => {
@@ -73,6 +80,26 @@ describe("utils", () => {
 			};
 
 			expect(() => retry(mockFunc, 2)).toThrow("Test Error on attempt 3");
+		});
+
+		describe("padLeft", () => {
+			it("should pad input with spaces when padding is a number", () => {
+				expect(padLeft(5, "hello")).toBe("     hello");
+			});
+
+			it("should pad input with padding string when padding is a string", () => {
+				expect(padLeft("abc", "hello")).toBe("abchello");
+			});
+		});
+
+		describe("padRight", () => {
+			it("should pad input with spaces when padding is a number", () => {
+				expect(padRight(5, "hello")).toBe("hello     ");
+			});
+
+			it("should pad input with padding string when padding is a string", () => {
+				expect(padRight("abc", "hello")).toBe("helloabc");
+			});
 		});
 	});
 });

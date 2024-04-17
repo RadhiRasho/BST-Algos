@@ -17,7 +17,7 @@ function randomNumber(threshold = 200) {
 
 const queue = new TaskQueue<Promise<unknown>>(20);
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
 	const res = await fetch(
 		`https://jsonplaceholder.typicode.com/todos/${randomNumber()}`,
 	);

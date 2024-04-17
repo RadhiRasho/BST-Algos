@@ -1,4 +1,4 @@
-class MultiExpressionTree<T> {
+export class MultiExpressionTree<T> {
 	private func: (users: Users) => T;
 	private users: Users;
 
@@ -12,7 +12,7 @@ class MultiExpressionTree<T> {
 	}
 }
 
-class User {
+export class User {
 	public firstName: string;
 	public lastName: string;
 	public age: number;
@@ -24,7 +24,7 @@ class User {
 	}
 }
 
-class Users {
+export class Users {
 	private users: User[];
 
 	constructor(users: User[]) {
@@ -44,16 +44,3 @@ class Users {
 		}, this).execute();
 	}
 }
-
-const users = new Users([
-	new User("Jeff", "Doe", 25),
-	new User("Jane", "Doe", 30),
-	new User("John", "Smith", 40),
-	new User("Jane", "Smith", 50),
-]);
-
-const tree = users
-	.Where((x) => x.firstName.toLowerCase() === "jeff")
-	.Select((x) => x);
-
-console.log(tree); // Outputs: "John"
