@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { selectionSort } from "@/src/selection-sort";
+import { selectionSort } from "#/sorting/selection-sort";
 
 describe("selectionSort", () => {
 	it("should sort an array of numbers in ascending order", () => {

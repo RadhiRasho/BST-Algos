@@ -1,7 +1,10 @@
 import type { BinaryNode } from "@/types/BinaryNode";
 import { generateBinaryTree } from "../utils/utils";
 
-function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
+export function iterativeSearch(
+	root: BinaryNode<number> | undefined,
+	key: number,
+) {
 	let head = root;
 	while (head) {
 		if (key > head.value) {
@@ -12,11 +15,13 @@ function iterativeSearch(root: BinaryNode<number> | undefined, key: number) {
 			return true;
 		}
 	}
+
+	return false;
 }
 
 const binaryTree = generateBinaryTree(1, 5, 0);
 
 console.time("iterativeSearch");
-// biome-ignore lint/style/noNonNullAssertion: Because I can
-console.timeLog("iterativeSearch", !!iterativeSearch(binaryTree!, 6));
+console.timeLog("iterativeSearch", iterativeSearch(binaryTree, 2));
+console.timeLog("iterativeSearch", iterativeSearch(binaryTree, 6)); // Not in there
 console.timeEnd("iterativeSearch");

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { quicksort } from "@/src/quicksort";
+import { quicksort } from "#/sorting/quicksort";
 
 describe("quicksort", () => {
 	it("should sort an array of numbers in ascending order", () => {

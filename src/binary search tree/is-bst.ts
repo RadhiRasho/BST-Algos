@@ -1,5 +1,5 @@
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "../utils/utils";
+import { generateBinaryTree } from "../../utils/utils";
 
 function isBST(root: BinaryNode<number> | undefined): boolean {
 	if (!root) return true;
