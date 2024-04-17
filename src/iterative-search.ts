@@ -18,10 +18,3 @@ export function iterativeSearch(
 
 	return false;
 }
-
-const binaryTree = generateBinaryTree(1, 5, 0);
-
-console.time("iterativeSearch");
-console.timeLog("iterativeSearch", iterativeSearch(binaryTree, 2));
-console.timeLog("iterativeSearch", iterativeSearch(binaryTree, 6)); // Not in there
-console.timeEnd("iterativeSearch");
