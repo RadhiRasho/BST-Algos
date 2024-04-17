@@ -1,72 +1,77 @@
-import { describe, expect, it } from "bun:test";
+import { beforeEach, describe, expect, it } from "bun:test";
 import { RingBuffer } from "@/types/RingBuffer";
 
-describe("Ring Buffer", () => {
-	const a = new RingBuffer();
+describe("RingBuffer", () => {
+	let ringBuffer: RingBuffer<number>;
 
-	it("should be empty", () => {
-		expect(a.isEmpty()).toBe(true);
+	beforeEach(() => {
+		ringBuffer = new RingBuffer<number>(3);
 	});
 
-	it("should not be full", () => {
-		expect(a.isFull()).toBe(false);
+	it("should push items", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		expect(ringBuffer.getLength()).toBe(2);
 	});
 
-	it("should have length 0", () => {
-		expect(a.getLength()).toBe(0);
+	it("should get items by index", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		expect(ringBuffer.get(0)).toBe(1);
+		expect(ringBuffer.get(1)).toBe(2);
 	});
 
-	it("should have capacity 5", () => {
-		expect(a.capacity).toBe(5);
+	it("should return undefined for out of bounds index", () => {
+		ringBuffer.push(1);
+		expect(ringBuffer.get(2)).toBeUndefined();
 	});
 
-	it("should have head 0", () => {
-		expect(a.head).toBe(0);
+	it("should pop items", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		expect(ringBuffer.pop()).toBe(1);
+		expect(ringBuffer.pop()).toBe(2);
 	});
 
-	it("should have tail 0", () => {
-		expect(a.tail).toBe(0);
+	it("should return undefined when popping an empty buffer", () => {
+		expect(ringBuffer.pop()).toBeUndefined();
 	});
 
-	it("should have data length 5", () => {
-		expect(a.data.length).toBe(5);
+	it("should peek items", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		expect(ringBuffer.peek()).toBe(1);
 	});
 
-	it("should push 1", () => {
-		a.push(1);
-		expect(a.getLength()).toBe(1);
-		expect(a.head).toBe(0);
-		expect(a.tail).toBe(1);
-		expect(a.data[0]).toBe(1);
+	it("should return a message when peeking an empty buffer", () => {
+		expect(ringBuffer.peek()).toBe("Peak a boo, where is everyone");
 	});
 
-	it("should push 2", () => {
-		a.push(2);
-		expect(a.getLength()).toBe(2);
-		expect(a.head).toBe(0);
-		expect(a.tail).toBe(2);
-		expect(a.data[0]).toBe(1);
-		expect(a.data[1]).toBe(2);
+	it("should return true if the buffer is empty", () => {
+		expect(ringBuffer.isEmpty()).toBe(true);
 	});
 
-	it("should push 3", () => {
-		a.push(3);
-		expect(a.getLength()).toBe(3);
-		expect(a.head).toBe(0);
-		expect(a.tail).toBe(3);
-		expect(a.data[0]).toBe(1);
-		expect(a.data[1]).toBe(2);
-		expect(a.data[2]).toBe(3);
+	it("should return true if the buffer is full", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		ringBuffer.push(3);
+		expect(ringBuffer.isFull()).toBe(true);
 	});
 
-	it("should push 4", () => {
-		a.push(4);
-		expect(a.getLength()).toBe(4);
-		expect(a.head).toBe(0);
-		expect(a.tail).toBe(4);
-		expect(a.data[0]).toBe(1);
-		expect(a.data[1]).toBe(2);
-		expect(a.data[2]).toBe(3);
-		expect(a.data[3]).toBe(4);
+	it("should return the correct length of the buffer", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		expect(ringBuffer.getLength()).toBe(2);
+	});
+
+	it("should return the correct capacity of the buffer", () => {
+		expect(ringBuffer.getCapacity()).toBe(3);
+	});
+
+	it("should return a string of the data", () => {
+		ringBuffer.push(1);
+		ringBuffer.push(2);
+		ringBuffer.push(3);
+		expect(ringBuffer.toString()).toBe("1 2 3");
 	});
 });

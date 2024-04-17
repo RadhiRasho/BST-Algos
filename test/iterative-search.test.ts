@@ -1,18 +1,17 @@
 import { beforeEach, describe, expect, it } from "bun:test";
 import { iterativeSearch } from "@/src/iterative-search";
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "@/utils/utils";
+import { generateBinaryTree } from "@/utils";
 
 describe("iterativeSearch", () => {
 	let root: BinaryNode<number> | undefined;
 
 	beforeEach(() => {
-		// Assuming generateBinaryTree creates a binary search tree
 		root = generateBinaryTree(1, 7, 0);
 	});
 
 	it("should return true if the key is in the tree", () => {
-		expect(iterativeSearch(root, 4)).toBe(true);
+		expect(iterativeSearch(root, 3)).toBe(true);
 	});
 
 	it("should return false if the key is not in the tree", () => {

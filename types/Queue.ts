@@ -86,6 +86,10 @@ type QueueItem<T> = {
 export class PriorityQueue<T> {
 	private pque: QueueItem<T>[] = [];
 
+	constructor() {
+		this.pque = new Array<QueueItem<T>>();
+	}
+
 	enqueue(value: T, priority: number) {
 		const queItem: QueueItem<T> = { value, priority };
 		let added = false;

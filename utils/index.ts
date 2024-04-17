@@ -49,7 +49,7 @@ export async function retryAsync<T>(func: () => Promise<T>, threshold = 5) {
 	}
 }
 
-export async function retry<T>(func: () => T, threshold = 5) {
+export function retry<T>(func: () => T, threshold = 5) {
 	try {
 		return func();
 	} catch (err) {

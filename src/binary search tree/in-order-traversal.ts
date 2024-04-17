@@ -1,5 +1,5 @@
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "../../utils/utils";
+import { generateBinaryTree } from "../../utils";
 
 function inOrderTraversal(head: BinaryNode<number> | undefined) {
 	return walk(head, []);

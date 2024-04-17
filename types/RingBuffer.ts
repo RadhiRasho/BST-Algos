@@ -3,16 +3,20 @@ export class RingBuffer<T> {
 	public data: (T | undefined)[];
 	public head = 0;
 	public tail = 0;
-	public capacity = 5;
+	private capacity = 5;
 
 	constructor(capacity = 5) {
-		this.data = Array.from<T>({ length: capacity });
+		this.capacity = capacity;
+		this.data = Array.from<T>({ length: this.capacity });
 	}
 
 	push(item: T): void {
+		if (this.length < this.capacity) {
+			this.length++;
+		}
+
 		this.data[this.tail] = item;
 		this.tail = (this.tail + 1) % this.capacity;
-		this.length = (this.length + 1) % this.capacity;
 	}
 
 	get(idx: number): T | undefined {
@@ -51,11 +55,7 @@ export class RingBuffer<T> {
 	}
 
 	toString(): string {
-		return this.data.toString();
-	}
-
-	toArray(): (T | undefined)[] {
-		return this.data;
+		return this.data.join(" ");
 	}
 
 	getLength(): number {

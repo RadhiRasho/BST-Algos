@@ -1,5 +1,4 @@
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "../utils/utils";
 
 export function iterativeSearch(
 	root: BinaryNode<number> | undefined,
@@ -15,6 +14,5 @@ export function iterativeSearch(
 			return true;
 		}
 	}
-
 	return false;
 }
