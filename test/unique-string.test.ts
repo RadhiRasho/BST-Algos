@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { UniqueString } from "@/src/unique-string";
+import { UniqueString } from "@/src/others/unique-string";
 
 describe("UniqueString", () => {
 	it("should return true for a string with unique characters", () => {

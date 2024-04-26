@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { iterativeSearch } from "@/src/iterative-search";
+import { iterativeSearch } from "@/src/binary-search-tree/iterative-search";
 import type { BinaryNode } from "@/types/BinaryNode";
 import { generateBinaryTree } from "@/utils";
 

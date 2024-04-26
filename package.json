@@ -8,10 +8,11 @@
   "devDependencies": {
     "@biomejs/biome": "latest",
     "@types/bun": "latest",
-    "lefthook": "latest"
+    "lefthook": "latest",
+    "typescript": "^5.5.0-beta"
   },
   "peerDependencies": {
-    "typescript": "latest"
+    "typescript": "^5.5.0-beta"
   },
   "trustedDependencies": [
     "@biomejs/biome",

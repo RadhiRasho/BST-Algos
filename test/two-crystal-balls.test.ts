@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { twoCrystalBalls } from "@/src/two-crystal-balls";
+import { twoCrystalBalls } from "@/src/others/two-crystal-balls";
 
 describe("twoCrystalBalls", () => {
 	it("should return the correct index when a break is present", () => {
