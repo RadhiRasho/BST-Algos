@@ -69,7 +69,7 @@ export function padLeft(padding: number | string, input: string) {
 	return padding + input;
 }
 
-export function padRight(padding: string | number, input: string) {
+export function padRight(padding: number | string, input: string) {
 	if (typeof padding === "number") {
 		return input + " ".repeat(padding);
 	}
