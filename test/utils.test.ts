@@ -1,12 +1,8 @@
+import { generateBinaryTree, generateGraph } from "@/utils/Generations";
+import { padLeft, padRight } from "@/utils/Padding";
+import { retry, retryAsync } from "@/utils/Retry";
+
 import { describe, expect, it } from "bun:test";
-import {
-	generateBinaryTree,
-	generateGraph,
-	padLeft,
-	padRight,
-	retry,
-	retryAsync,
-} from "@/utils";
 
 describe("utils", () => {
 	describe("generateBinaryTree", () => {

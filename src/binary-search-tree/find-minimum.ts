@@ -1,5 +1,5 @@
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "../../utils";
+import { generateBinaryTree } from "@/utils/Generations";
 
 function findMinimum(node: BinaryNode<number> | undefined) {
 	let head: BinaryNode<number> | undefined = node;

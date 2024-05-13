@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "bun:test";
 import { iterativeSearch } from "@/src/binary-search-tree/iterative-search";
 import type { BinaryNode } from "@/types/BinaryNode";
-import { generateBinaryTree } from "@/utils";
+import { generateBinaryTree } from "@/utils/Generations";
 
 describe("iterativeSearch", () => {
 	let root: BinaryNode<number> | undefined;
