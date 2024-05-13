@@ -1,12 +1,9 @@
 {
   "name": "bst-algos",
   "module": "index.ts",
-  "type": "module",
-  "dependencies": {
-    "@clack/prompts": "latest"
-  },
   "devDependencies": {
     "@biomejs/biome": "latest",
+    "@clack/prompts": "latest",
     "@types/bun": "latest",
     "lefthook": "latest"
   },
@@ -16,5 +13,6 @@
   "trustedDependencies": [
     "@biomejs/biome",
     "lefthook"
-  ]
+  ],
+  "type": "module"
 }
