@@ -1,5 +1,5 @@
+import { padRight } from "@/utils/Padding";
 import { sleep } from "bun";
-import { padRight } from "./utils/Padding";
 
 const Colors = [
 	"\u001b[31m", // Red
