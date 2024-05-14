@@ -10,8 +10,7 @@ const Colors = [
 	"\u001b[36m", // Cyan
 ];
 
-const randomColor = (): string =>
-	Colors[Math.floor(Math.random() * Colors.length)];
+const randomColor = () => Colors[Math.floor(Math.random() * Colors.length)];
 
 function drawLine(char: string, times: number) {
 	let s = "";
@@ -30,7 +29,7 @@ function drawLine(char: string, times: number) {
 }
 
 function lineWithColor(i: number) {
-	const line = drawLine(".", i);
+	const line = drawLine("", i);
 	const color = randomColor();
 	return `${color}${line}`;
 }
