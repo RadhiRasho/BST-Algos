@@ -1,6 +1,6 @@
 
 # Useful Links: 
-[Valley of Code](https://thevalleyofcode.com/http/2-http-methods)
+[Valley of Code](https://thevalleyofcode.com/http/2-http-methods) - Useful for anything Web Dev Related and standards/basics
 
 
 # Meme
